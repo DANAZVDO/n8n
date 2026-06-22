@@ -3,73 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurante Real - Comida Caseira</title>
+    <title>Restaurante Real</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            line-height: 1.6;
             color: #333;
+            background-color: #f8f8f8;
         }
         header {
-            background-color: #4CAF50;
+            background-color: #ff5722;
             color: white;
-            padding: 10px 0;
+            padding: 20px;
             text-align: center;
-        }
-        h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-        h2 {
-            margin-bottom: 20px;
-            font-size: 1.5em;
         }
         .hero {
-            background: url('https://via.placeholder.com/1200x400') no-repeat center center/cover;
-            color: white;
             padding: 60px 20px;
             text-align: center;
+            background-color: #ffccbc;
+        }
+        .hero h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        .hero p {
+            font-size: 1.2em;
+            margin: 10px 0 20px;
         }
         .cta-button {
-            background-color: #FFD700;
-            color: #4CAF50;
-            padding: 15px 30px;
-            border: none;
+            background-color: #388e3c;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
             border-radius: 5px;
-            cursor: pointer;
-            font-size: 1.2em;
+            transition: background-color 0.3s;
         }
         .cta-button:hover {
-            background-color: #FFC107;
+            background-color: #2e7d32;
         }
         section {
             padding: 40px 20px;
             text-align: center;
         }
+        section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
         .service {
-            display: inline-block;
-            width: 30%;
+            background-color: white;
             margin: 10px;
             padding: 20px;
-            background-color: #f4f4f4;
-            border-radius: 5px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        .testimonial {
+            font-style: italic;
+            margin: 10px 0;
         }
         footer {
-            background-color: #333;
+            background-color: #3e2723;
             color: white;
+            padding: 20px;
             text-align: center;
-            padding: 10px 0;
         }
-        .social-links a {
-            margin: 0 10px;
-            color: white;
+        footer a {
+            color: #8d6e63;
             text-decoration: none;
         }
-        @media (max-width: 768px) {
+        @media (max-width: 600px) {
             .service {
                 width: 90%;
+            }
+            .hero h1 {
+                font-size: 2em;
             }
         }
     </style>
@@ -81,39 +94,49 @@
 </header>
 
 <section class="hero">
-    <h2>Descubra o Sabor da Comida Caseira</h2>
-    <p>Buffet livre e à quilo com a melhor qualidade e um toque especial!</p>
-    <button class="cta-button">Faça Sua Reserva</button>
+    <h1>Bem-vindo ao Restaurante Real!</h1>
+    <p>Experimente a verdadeira comida caseira com nosso buffet livre e à quilo.</p>
+    <a href="tel:+5551995289066" class="cta-button">Faça sua reserva!</a>
 </section>
 
-<section>
+<section class="sobre">
     <h2>Sobre Nós</h2>
-    <p>O Restaurante Real oferece uma experiência única em comida caseira em Arroio do Sal/RS. Com um buffet livre e à quilo, nossos pratos são preparados com ingredientes frescos e uma receita que passa de geração para geração.</p>
+    <p>Localizado no coração de Arroio do Sal, o Restaurante Real é conhecido por sua deliciosa comida caseira, oferecida em um buffet livre e à quilo. Com uma nota de 4.7 no Google, garantimos qualidade e satisfação aos nossos clientes.</p>
 </section>
 
-<section>
+<section class="servicos">
     <h2>Nossos Serviços</h2>
-    <div class="service"><h3>Buffet Livre</h3><p>Pratos variados para todos os gostos, preparados diariamente.</p></div>
-    <div class="service"><h3>À Quilo</h3><p>Controle sua porção e escolha o que ama, pagando apenas pelo que consome.</p></div>
-    <div class="service"><h3>Delivery</h3><p>Receba nossos pratos no conforto de sua casa através do Anota AI.</p></div>
-</section>
-
-<section>
-    <h2>Depoimentos</h2>
-    <p>"A melhor comida caseira que já provei!" - Cliente 1</p>
-    <p>"Atendimento excelente e pratos deliciosos!" - Cliente 2</p>
-    <p>"Recomendo para quem ama comida de verdade!" - Cliente 3</p>
-</section>
-
-<section>
-    <h2>Contato</h2>
-    <p>Entre em contato conosco!</p>
-    <p>Telefone: <a href="tel:+5551995289066">+55 51 99528-9066</a></p>
-    <p>Endereço: R. São Domingos, 48 - Centro, Arroio do Sal - RS</p>
-    <div class="social-links">
-        <a href="https://www.instagram.com/orestaurantereal/" target="_blank">Instagram</a>
-        <a href="https://www.facebook.com/orestaurantereal/" target="_blank">Facebook</a>
+    <div class="services">
+        <div class="service">
+            <h3>Buffet Livre</h3>
+            <p>Desfrute de um variado buffet com receitas caseiras todos os dias.</p>
+        </div>
+        <div class="service">
+            <h3>Comida à Quilo</h3>
+            <p>Monte seu prato do jeito que você gosta e pague apenas pelo peso.</p>
+        </div>
+        <div class="service">
+            <h3>Atendimento Personalizado</h3>
+            <p>Nossa equipe está sempre disposta a fazer sua refeição ainda melhor.</p>
+        </div>
     </div>
+</section>
+
+<section class="depoimentos">
+    <h2>O que nossos clientes dizem</h2>
+    <p class="testimonial">"A comida é maravilhosa e o ambiente é muito acolhedor!" - João S.</p>
+    <p class="testimonial">"Melhor buffet que já experimentei. Super recomendo!" - Maria P.</p>
+</section>
+
+<section class="contato">
+    <h2>Entre em Contato</h2>
+    <p>Visite-nos em: R. São Domingos, 48 - Centro, Arroio do Sal - RS</p>
+    <p>Telefone: <a href="tel:+5551995289066">(+55) 51 99528-9066</a></p>
+    <p>Siga-nos nas redes sociais:</p>
+    <p>
+        <a href="https://www.instagram.com/orestaurantereal/">Instagram</a> | 
+        <a href="https://www.facebook.com/orestaurantereal/">Facebook</a>
+    </p>
 </section>
 
 <footer>
