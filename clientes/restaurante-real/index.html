@@ -3,86 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurante Real</title>
+    <title>Restaurante Real - Comida Caseira</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            color: #333;
-            background-color: #f8f8f8;
+            color: #4A4A4A;
+            background-color: #f9f9f9;
         }
         header {
-            background-color: #ff5722;
-            color: white;
+            background-color: #8B4513;
             padding: 20px;
             text-align: center;
+            color: white;
         }
         .hero {
-            padding: 60px 20px;
+            background: url('https://via.placeholder.com/1200x600') no-repeat center center/cover;
+            color: white;
             text-align: center;
-            background-color: #ffccbc;
+            padding: 100px 20px;
         }
         .hero h1 {
             font-size: 2.5em;
-            margin: 0;
+            margin-bottom: 10px;
         }
         .hero p {
-            font-size: 1.2em;
-            margin: 10px 0 20px;
+            font-size: 1.5em;
+            margin-bottom: 20px;
         }
-        .cta-button {
-            background-color: #388e3c;
-            color: white;
+        .btn {
+            background-color: #FFD700;
+            color: #8B4513;
             padding: 10px 20px;
-            text-decoration: none;
+            border: none;
             border-radius: 5px;
-            transition: background-color 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
         }
-        .cta-button:hover {
-            background-color: #2e7d32;
+        .btn:hover {
+            background-color: #FFC107;
         }
         section {
             padding: 40px 20px;
-            text-align: center;
-        }
-        section h2 {
-            font-size: 2em;
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
         }
-        .services {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+        h2 {
+            color: #8B4513;
+            margin-bottom: 15px;
         }
-        .service {
-            background-color: white;
-            margin: 10px;
+        footer {
+            text-align: center;
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            width: 300px;
+            background-color: #8B4513;
+            color: white;
+        }
+        .social-links a {
+            margin: 0 10px;
+            color: white;
+            text-decoration: none;
         }
         .testimonial {
             font-style: italic;
             margin: 10px 0;
-        }
-        footer {
-            background-color: #3e2723;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        footer a {
-            color: #8d6e63;
-            text-decoration: none;
+            border-left: 2px solid #8B4513;
+            padding-left: 15px;
         }
         @media (max-width: 600px) {
-            .service {
-                width: 90%;
-            }
             .hero h1 {
                 font-size: 2em;
+            }
+            .hero p {
+                font-size: 1.2em;
             }
         }
     </style>
@@ -94,49 +92,41 @@
 </header>
 
 <section class="hero">
-    <h1>Bem-vindo ao Restaurante Real!</h1>
-    <p>Experimente a verdadeira comida caseira com nosso buffet livre e à quilo.</p>
-    <a href="tel:+5551995289066" class="cta-button">Faça sua reserva!</a>
+    <h1>Bem-vindo ao Restaurante Real</h1>
+    <p>Comida Caseira de Qualidade</p>
+    <a href="#contato" class="btn">Faça seu Pedido</a>
 </section>
 
-<section class="sobre">
+<section id="sobre">
     <h2>Sobre Nós</h2>
-    <p>Localizado no coração de Arroio do Sal, o Restaurante Real é conhecido por sua deliciosa comida caseira, oferecida em um buffet livre e à quilo. Com uma nota de 4.7 no Google, garantimos qualidade e satisfação aos nossos clientes.</p>
+    <p>O Restaurante Real é um verdadeiro refúgio para quem ama comida caseira. Localizado em Arroio do Sal, oferecemos um buffet livre e à quilo, sempre com pratos frescos e ingredientes de qualidade.</p>
 </section>
 
-<section class="servicos">
+<section id="servicos">
     <h2>Nossos Serviços</h2>
-    <div class="services">
-        <div class="service">
-            <h3>Buffet Livre</h3>
-            <p>Desfrute de um variado buffet com receitas caseiras todos os dias.</p>
-        </div>
-        <div class="service">
-            <h3>Comida à Quilo</h3>
-            <p>Monte seu prato do jeito que você gosta e pague apenas pelo peso.</p>
-        </div>
-        <div class="service">
-            <h3>Atendimento Personalizado</h3>
-            <p>Nossa equipe está sempre disposta a fazer sua refeição ainda melhor.</p>
-        </div>
-    </div>
+    <ul>
+        <li>Buffet livre com pratos variados todos os dias.</li>
+        <li>Opções de comida à quilo para uma refeição personalizada.</li>
+        <li>Serviço de entrega sem contato para sua conveniência.</li>
+        <li>Ambiente acolhedor e familiar.</li>
+    </ul>
 </section>
 
-<section class="depoimentos">
+<section id="depoimentos">
     <h2>O que nossos clientes dizem</h2>
-    <p class="testimonial">"A comida é maravilhosa e o ambiente é muito acolhedor!" - João S.</p>
-    <p class="testimonial">"Melhor buffet que já experimentei. Super recomendo!" - Maria P.</p>
+    <div class="testimonial">"Comida incrível e atendimento excepcional! Sempre volto!" - Ana S.</div>
+    <div class="testimonial">"O melhor buffet de Arroio do Sal, com certeza recomendo!" - Carlos D.</div>
+    <div class="testimonial">"Ambiente acolhedor e pratos deliciosos. Uma experiência maravilhosa!" - Maria R.</div>
 </section>
 
-<section class="contato">
+<section id="contato">
     <h2>Entre em Contato</h2>
-    <p>Visite-nos em: R. São Domingos, 48 - Centro, Arroio do Sal - RS</p>
-    <p>Telefone: <a href="tel:+5551995289066">(+55) 51 99528-9066</a></p>
-    <p>Siga-nos nas redes sociais:</p>
-    <p>
-        <a href="https://www.instagram.com/orestaurantereal/">Instagram</a> | 
-        <a href="https://www.facebook.com/orestaurantereal/">Facebook</a>
-    </p>
+    <p>Telefone: <a href="tel:+5551995289066">+55 51 99528-9066</a></p>
+    <p>Endereço: R. São Domingos, 48 - Centro, Arroio do Sal - RS, 95585-000, Brasil</p>
+    <div class="social-links">
+        <a href="https://www.instagram.com/orestaurantereal/">Instagram</a> |
+        <a href="https://www.facebook.com/orestaurantereal/?locale=pt_BR">Facebook</a>
+    </div>
 </section>
 
 <footer>
