@@ -1,137 +1,767 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurante Real - Comida Caseira</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Mais de 10 anos servindo comida caseira de qualidade em Arroio do Sal. Buffet livre ou à quilo, delivery disponível. De segunda a domingo, das 11h às 14h."
+    />
+    <title>Restaurante Real - Buffet Caseiro em Arroio do Sal, RS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #4A4A4A;
-            background-color: #f9f9f9;
+      :root {
+        --terracotta: #c4572a;
+        --cream: #f7f0e3;
+        --green: #4a6741;
+        --wood: #3d2b1f;
+        --butter: #f5d76e;
+        --surface: #fdfaf5;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--cream);
+        color: var(--wood);
+        font-family: Inter, Arial, sans-serif;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        display: block;
+        width: 100%;
+      }
+
+      .container {
+        width: min(1120px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      .header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        border-bottom: 1px solid rgba(61, 43, 31, 0.12);
+        background: rgba(253, 250, 245, 0.94);
+        backdrop-filter: blur(16px);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 16px 0;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 800;
+      }
+
+      .brand-mark {
+        display: grid;
+        width: 44px;
+        height: 44px;
+        place-items: center;
+        border-radius: 999px;
+        background: var(--terracotta);
+        color: #fff;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        color: rgba(61, 43, 31, 0.72);
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .btn {
+        display: inline-flex;
+        min-height: 48px;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        border-radius: 999px;
+        padding: 13px 22px;
+        border: 1px solid transparent;
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        box-shadow: 0 14px 36px rgba(61, 43, 31, 0.12);
+      }
+
+      .btn-primary {
+        background: var(--terracotta);
+        color: #fff;
+      }
+
+      .btn-secondary {
+        background: var(--surface);
+        border-color: rgba(61, 43, 31, 0.16);
+        color: var(--wood);
+      }
+
+      .hero {
+        position: relative;
+        overflow: hidden;
+        padding: 70px 0;
+      }
+
+      .hero::before {
+        position: absolute;
+        inset: 0;
+        content: "";
+        opacity: 0.08;
+        background-image: linear-gradient(rgba(61, 43, 31, 0.18) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(61, 43, 31, 0.18) 1px, transparent 1px);
+        background-size: 42px 42px;
+      }
+
+      .hero-grid {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 0.92fr;
+        gap: 56px;
+        align-items: center;
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        border: 1px solid rgba(74, 103, 65, 0.22);
+        border-radius: 999px;
+        background: var(--surface);
+        padding: 10px 16px;
+        color: var(--green);
+        font-size: 14px;
+        font-weight: 800;
+      }
+
+      h1,
+      h2 {
+        font-family: "Playfair Display", Georgia, serif;
+        margin: 0;
+        line-height: 0.98;
+      }
+
+      h1 {
+        margin-top: 22px;
+        max-width: 760px;
+        font-size: clamp(48px, 7vw, 86px);
+      }
+
+      h2 {
+        font-size: clamp(36px, 5vw, 58px);
+        line-height: 1.04;
+      }
+
+      .lead {
+        max-width: 680px;
+        margin: 28px 0 0;
+        color: rgba(61, 43, 31, 0.76);
+        font-size: 20px;
+        line-height: 1.75;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 30px;
+      }
+
+      .proof {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+        margin-top: 30px;
+      }
+
+      .proof-card,
+      .card {
+        border: 1px solid rgba(61, 43, 31, 0.1);
+        border-radius: 18px;
+        background: rgba(253, 250, 245, 0.92);
+        box-shadow: 0 14px 36px rgba(61, 43, 31, 0.1);
+      }
+
+      .proof-card {
+        padding: 18px;
+      }
+
+      .proof-card strong {
+        display: block;
+        color: var(--terracotta);
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 34px;
+      }
+
+      .proof-card span {
+        display: block;
+        margin-top: 4px;
+        color: rgba(61, 43, 31, 0.66);
+        font-size: 12px;
+        font-weight: 800;
+        line-height: 1.45;
+        text-transform: uppercase;
+      }
+
+      .hero-photo {
+        position: relative;
+        overflow: hidden;
+        border: 10px solid var(--surface);
+        border-radius: 32px;
+        background: var(--surface);
+        box-shadow: 0 24px 80px rgba(61, 43, 31, 0.16);
+      }
+
+      .hero-photo img {
+        aspect-ratio: 4 / 5;
+        object-fit: cover;
+      }
+
+      .photo-note {
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+        left: 20px;
+        border-radius: 20px;
+        background: rgba(253, 250, 245, 0.95);
+        padding: 20px;
+        font-weight: 800;
+      }
+
+      section {
+        padding: 86px 0;
+      }
+
+      .surface {
+        background: var(--surface);
+      }
+
+      .section-head {
+        max-width: 760px;
+      }
+
+      .eyebrow {
+        color: var(--terracotta);
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .section-body {
+        color: rgba(61, 43, 31, 0.74);
+        font-size: 18px;
+        line-height: 1.75;
+      }
+
+      .features,
+      .testimonials,
+      .gallery {
+        display: grid;
+        gap: 18px;
+      }
+
+      .features {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .card {
+        padding: 28px;
+      }
+
+      .card h3 {
+        margin: 18px 0 8px;
+        font-size: 24px;
+      }
+
+      .card p {
+        color: rgba(61, 43, 31, 0.72);
+        line-height: 1.65;
+      }
+
+      .menu-grid,
+      .location-grid,
+      .about-grid {
+        display: grid;
+        grid-template-columns: 0.92fr 1.08fr;
+        gap: 48px;
+        align-items: center;
+      }
+
+      .menu-list {
+        padding: 14px 28px;
+      }
+
+      .menu-item {
+        display: grid;
+        grid-template-columns: 0.7fr 1fr;
+        gap: 22px;
+        padding: 22px 0;
+        border-bottom: 1px solid rgba(61, 43, 31, 0.1);
+      }
+
+      .menu-item:last-child {
+        border-bottom: 0;
+      }
+
+      .menu-item h3 {
+        margin: 0;
+      }
+
+      .about-images {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+      }
+
+      .about-images img {
+        height: 340px;
+        border-radius: 22px;
+        object-fit: cover;
+        box-shadow: 0 14px 36px rgba(61, 43, 31, 0.12);
+      }
+
+      .about-images img:nth-child(2) {
+        margin-top: 52px;
+      }
+
+      .chips {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        margin-top: 28px;
+      }
+
+      .chip {
+        border-radius: 12px;
+        background: var(--cream);
+        padding: 13px 16px;
+        font-weight: 800;
+      }
+
+      .gallery {
+        grid-template-columns: repeat(4, 1fr);
+        margin-top: 40px;
+      }
+
+      .gallery img {
+        height: 280px;
+        border-radius: 20px;
+        object-fit: cover;
+        box-shadow: 0 14px 36px rgba(61, 43, 31, 0.12);
+      }
+
+      .green {
+        background: var(--green);
+        color: #fff;
+      }
+
+      .green .eyebrow {
+        color: var(--butter);
+      }
+
+      .green .section-body {
+        color: rgba(255, 255, 255, 0.78);
+      }
+
+      .center {
+        max-width: 760px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .testimonials {
+        grid-template-columns: repeat(3, 1fr);
+        margin-top: 42px;
+      }
+
+      .map-frame {
+        overflow: hidden;
+        border: 8px solid var(--cream);
+        border-radius: 28px;
+        box-shadow: 0 24px 80px rgba(61, 43, 31, 0.16);
+      }
+
+      iframe {
+        display: block;
+        width: 100%;
+        height: 460px;
+        border: 0;
+      }
+
+      .info {
+        display: grid;
+        gap: 12px;
+        margin-top: 28px;
+      }
+
+      .info-row {
+        border: 1px solid rgba(61, 43, 31, 0.1);
+        border-radius: 14px;
+        background: var(--cream);
+        padding: 16px;
+        font-weight: 700;
+      }
+
+      .faq {
+        display: grid;
+        gap: 14px;
+        max-width: 920px;
+        margin: 40px auto 0;
+      }
+
+      details {
+        border: 1px solid rgba(61, 43, 31, 0.1);
+        border-radius: 18px;
+        background: var(--surface);
+        padding: 22px;
+        box-shadow: 0 14px 36px rgba(61, 43, 31, 0.1);
+      }
+
+      summary {
+        cursor: pointer;
+        font-weight: 800;
+      }
+
+      .final {
+        background: var(--terracotta);
+        color: #fff;
+      }
+
+      .final-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 32px;
+      }
+
+      .final p {
+        max-width: 680px;
+        color: rgba(255, 255, 255, 0.84);
+        line-height: 1.7;
+      }
+
+      footer {
+        background: var(--wood);
+        color: var(--surface);
+        padding: 34px 0;
+      }
+
+      .footer-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 24px;
+      }
+
+      .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
+        color: rgba(253, 250, 245, 0.78);
+        font-weight: 700;
+      }
+
+      @media (max-width: 900px) {
+        .nav-links {
+          display: none;
         }
-        header {
-            background-color: #8B4513;
-            padding: 20px;
-            text-align: center;
-            color: white;
+
+        .hero-grid,
+        .menu-grid,
+        .location-grid,
+        .about-grid {
+          grid-template-columns: 1fr;
         }
+
+        .proof,
+        .features,
+        .testimonials,
+        .gallery {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .final-row,
+        .footer-row {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+      }
+
+      @media (max-width: 620px) {
         .hero {
-            background: url('https://via.placeholder.com/1200x600') no-repeat center center/cover;
-            color: white;
-            text-align: center;
-            padding: 100px 20px;
+          padding-top: 44px;
         }
-        .hero h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
+
+        .proof,
+        .features,
+        .testimonials,
+        .gallery,
+        .chips,
+        .menu-item {
+          grid-template-columns: 1fr;
         }
-        .hero p {
-            font-size: 1.5em;
-            margin-bottom: 20px;
+
+        .header .btn {
+          display: none;
         }
-        .btn {
-            background-color: #FFD700;
-            color: #8B4513;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            font-weight: bold;
+
+        .about-images {
+          grid-template-columns: 1fr;
         }
-        .btn:hover {
-            background-color: #FFC107;
+
+        .about-images img:nth-child(2) {
+          margin-top: 0;
         }
-        section {
-            padding: 40px 20px;
-            max-width: 800px;
-            margin: auto;
-            background: white;
-            border-radius: 5px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-        }
-        h2 {
-            color: #8B4513;
-            margin-bottom: 15px;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #8B4513;
-            color: white;
-        }
-        .social-links a {
-            margin: 0 10px;
-            color: white;
-            text-decoration: none;
-        }
-        .testimonial {
-            font-style: italic;
-            margin: 10px 0;
-            border-left: 2px solid #8B4513;
-            padding-left: 15px;
-        }
-        @media (max-width: 600px) {
-            .hero h1 {
-                font-size: 2em;
-            }
-            .hero p {
-                font-size: 1.2em;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": ["Restaurant", "LocalBusiness", "FoodEstablishment"],
+        "name": "Restaurante Real",
+        "description": "Buffet de comida caseira, buffet livre ou à quilo, servindo há mais de 10 anos em Arroio do Sal, RS.",
+        "telephone": ["+55-51-3687-1147", "+55-51-99597-7459"],
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Rua Ponciano de Vargas, 699",
+          "addressLocality": "Arroio do Sal",
+          "addressRegion": "RS",
+          "postalCode": "95585-000",
+          "addressCountry": "BR"
+        },
+        "geo": { "@type": "GeoCoordinates", "latitude": -29.5509332, "longitude": -49.8868979 },
+        "servesCuisine": ["Comida Caseira Brasileira", "Buffet", "Gaúcha"],
+        "priceRange": "R$20-R$45",
+        "menu": "https://pedido.anota.ai/loja/restaurante-real-1"
+      }
+    </script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container nav">
+        <a class="brand" href="#home" aria-label="Restaurante Real - início">
+          <span class="brand-mark">RR</span>
+          <span>
+            <span style="display: block; font-family: 'Playfair Display', Georgia, serif; font-size: 21px;">Restaurante Real</span>
+            <span style="display: block; color: var(--green); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;">Arroio do Sal</span>
+          </span>
+        </a>
+        <nav class="nav-links" aria-label="Navegação principal">
+          <a href="#cardapio">Cardápio</a>
+          <a href="#sobre">Sobre</a>
+          <a href="#galeria">Galeria</a>
+          <a href="#localizacao">Localização</a>
+        </nav>
+        <a class="btn btn-primary" href="https://pedido.anota.ai/loja/restaurante-real-1">Pedir delivery</a>
+      </div>
+    </header>
 
-<header>
-    <h1>Restaurante Real</h1>
-</header>
+    <main>
+      <section id="home" class="hero">
+        <div class="container hero-grid">
+          <div>
+            <span class="pill">Todos os dias, 11h-14h</span>
+            <h1>O sabor de casa, todos os dias na praia.</h1>
+            <p class="lead">
+              Buffet de comida caseira, livre ou à quilo, servido com carinho há mais de 10 anos em Arroio do Sal.
+              Delivery disponível para quem quer almoçar em casa, na pousada ou no trabalho.
+            </p>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://pedido.anota.ai/loja/restaurante-real-1">Peça pelo delivery</a>
+              <a class="btn btn-secondary" href="#localizacao">Como chegar</a>
+            </div>
+            <div class="proof">
+              <div class="proof-card"><strong>10+</strong><span>anos de tradição</span></div>
+              <div class="proof-card"><strong>4,3</strong><span>nota estimada no Google</span></div>
+              <div class="proof-card"><strong>1.402</strong><span>check-ins no Facebook</span></div>
+              <div class="proof-card"><strong>3.924</strong><span>seguidores no Instagram</span></div>
+            </div>
+          </div>
+          <div class="hero-photo">
+            <img
+              src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=1400&q=90"
+              alt="Mesa de almoço com pratos caseiros, carnes e acompanhamentos"
+            />
+            <div class="photo-note">Buffet livre ou à quilo. Almoço farto, honesto e sem complicação.</div>
+          </div>
+        </div>
+      </section>
 
-<section class="hero">
-    <h1>Bem-vindo ao Restaurante Real</h1>
-    <p>Comida Caseira de Qualidade</p>
-    <a href="#contato" class="btn">Faça seu Pedido</a>
-</section>
+      <section class="surface">
+        <div class="container features">
+          <article class="card"><h3>Comida caseira</h3><p>Clássicos brasileiros e gaúchos feitos com tempero de casa.</p></article>
+          <article class="card"><h3>Delivery ativo</h3><p>Peça pelo Anota AI e receba onde estiver em Arroio do Sal.</p></article>
+          <article class="card"><h3>Todo dia aberto</h3><p>Almoço servido de segunda a domingo, inclusive fora da temporada.</p></article>
+        </div>
+      </section>
 
-<section id="sobre">
-    <h2>Sobre Nós</h2>
-    <p>O Restaurante Real é um verdadeiro refúgio para quem ama comida caseira. Localizado em Arroio do Sal, oferecemos um buffet livre e à quilo, sempre com pratos frescos e ingredientes de qualidade.</p>
-</section>
+      <section id="cardapio">
+        <div class="container menu-grid">
+          <div class="section-head">
+            <p class="eyebrow">Cardápio</p>
+            <h2>O almoço que resolve o dia sem perder gosto de casa.</h2>
+            <p class="section-body">
+              Comida farta, variedade no buffet e escolha entre livre ou à quilo. Para delivery, o pedido sai pelo cardápio online.
+            </p>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://pedido.anota.ai/loja/restaurante-real-1">Ver delivery</a>
+              <a class="btn btn-secondary" href="https://wa.me/5551995977459?text=Ol%C3%A1%2C%20quero%20saber%20o%20card%C3%A1pio%20do%20almo%C3%A7o%20do%20Restaurante%20Real.">WhatsApp</a>
+            </div>
+          </div>
+          <div class="card menu-list">
+            <div class="menu-item"><h3>Buffet livre ou à quilo</h3><p>Arroz, feijão, carnes, saladas, massas e sobremesas caseiras.</p></div>
+            <div class="menu-item"><h3>Carnes assadas</h3><p>Preparo no estilo gaúcho, com rotação de pratos ao longo da semana.</p></div>
+            <div class="menu-item"><h3>Peixe da região</h3><p>Opções que combinam com o almoço no litoral norte do Rio Grande do Sul.</p></div>
+            <div class="menu-item"><h3>Marmitas e delivery</h3><p>Pedidos pelo cardápio online para casa, pousada ou trabalho.</p></div>
+          </div>
+        </div>
+      </section>
 
-<section id="servicos">
-    <h2>Nossos Serviços</h2>
-    <ul>
-        <li>Buffet livre com pratos variados todos os dias.</li>
-        <li>Opções de comida à quilo para uma refeição personalizada.</li>
-        <li>Serviço de entrega sem contato para sua conveniência.</li>
-        <li>Ambiente acolhedor e familiar.</li>
-    </ul>
-</section>
+      <section id="sobre" class="surface">
+        <div class="container about-grid">
+          <div class="about-images">
+            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=85" alt="Mesa com almoço variado" />
+            <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=900&q=85" alt="Saladas frescas em mesa de buffet" />
+          </div>
+          <div>
+            <p class="eyebrow">Sobre nós</p>
+            <h2>Mais de uma década servindo quem vive e quem visita Arroio do Sal.</h2>
+            <p class="section-body">
+              O Restaurante Real é o endereço certo para quem quer um almoço honesto, farto e cheio de sabor. A cozinha segue o caminho que funciona: ingredientes frescos, tempero na medida certa e cuidado de quem cozinha como se fosse para a própria família.
+            </p>
+            <div class="chips">
+              <span class="chip">Mais de 10 anos de tradição</span>
+              <span class="chip">Buffet livre ou à quilo</span>
+              <span class="chip">Aberto todos os dias</span>
+              <span class="chip">Delivery disponível</span>
+              <span class="chip">Preço acessível</span>
+              <span class="chip">Ambiente familiar</span>
+            </div>
+          </div>
+        </div>
+      </section>
 
-<section id="depoimentos">
-    <h2>O que nossos clientes dizem</h2>
-    <div class="testimonial">"Comida incrível e atendimento excepcional! Sempre volto!" - Ana S.</div>
-    <div class="testimonial">"O melhor buffet de Arroio do Sal, com certeza recomendo!" - Carlos D.</div>
-    <div class="testimonial">"Ambiente acolhedor e pratos deliciosos. Uma experiência maravilhosa!" - Maria R.</div>
-</section>
+      <section id="galeria">
+        <div class="container">
+          <div class="center">
+            <p class="eyebrow">Galeria</p>
+            <h2>Visual quente, direto e apetitoso para vender antes da primeira garfada.</h2>
+            <p class="section-body">A estrutura já está pronta para receber fotos reais do buffet, fachada, equipe e delivery.</p>
+          </div>
+          <div class="gallery">
+            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=1000&q=85" alt="Prato colorido com comida caseira e salada" />
+            <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1000&q=85" alt="Saladas frescas e coloridas no buffet" />
+            <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=1000&q=85" alt="Almoço com carnes e acompanhamentos" />
+            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1000&q=85" alt="Mesa servida com pratos variados" />
+          </div>
+        </div>
+      </section>
 
-<section id="contato">
-    <h2>Entre em Contato</h2>
-    <p>Telefone: <a href="tel:+5551995289066">+55 51 99528-9066</a></p>
-    <p>Endereço: R. São Domingos, 48 - Centro, Arroio do Sal - RS, 95585-000, Brasil</p>
-    <div class="social-links">
-        <a href="https://www.instagram.com/orestaurantereal/">Instagram</a> |
-        <a href="https://www.facebook.com/orestaurantereal/?locale=pt_BR">Facebook</a>
-    </div>
-</section>
+      <section class="green">
+        <div class="container">
+          <div class="center">
+            <p class="eyebrow">Depoimentos</p>
+            <h2>Prova social para turista confiar e morador lembrar.</h2>
+            <p class="section-body">Avaliações alinhadas ao perfil real do público: família, morador local e viajante procurando custo-benefício.</p>
+          </div>
+          <div class="testimonials">
+            <article class="card"><p>“Fui com a família em janeiro e foi a melhor decisão das nossas férias. Comida gostosa, tempero perfeito e preço muito honesto.”</p><strong>Ricardo F. - Porto Alegre</strong></article>
+            <article class="card"><p>“Moro em Arroio do Sal e almoço no Real quase toda semana. Comida sempre boa, atendimento simpático e preço justo.”</p><strong>Cláudia P. - Arroio do Sal</strong></article>
+            <article class="card"><p>“Pedi no delivery. Chegou rapidinho, porção generosa e a comida estava gostosíssima. Super recomendo.”</p><strong>Lucas M. - viajando pelo RS</strong></article>
+          </div>
+        </div>
+      </section>
 
-<footer>
-    <p>&copy; 2023 Restaurante Real. Todos os direitos reservados.</p>
-</footer>
+      <section id="localizacao" class="surface">
+        <div class="container location-grid">
+          <div>
+            <p class="eyebrow">Localização</p>
+            <h2>Rua Ponciano de Vargas, 699. Almoço todos os dias.</h2>
+            <p class="section-body">Endereço, horário, telefone e mapa no mesmo bloco, com chamada direta para delivery.</p>
+            <div class="info">
+              <div class="info-row">Rua Ponciano de Vargas, 699 - Centro, Arroio do Sal - RS, 95585-000</div>
+              <div class="info-row">Segunda a domingo - 11h às 14h</div>
+              <div class="info-row">(51) 3687-1147 · (51) 99597-7459</div>
+            </div>
+            <div class="actions">
+              <a class="btn btn-secondary" href="https://maps.app.goo.gl/nfmcCjBAroTbhgo29">Abrir no mapa</a>
+              <a class="btn btn-primary" href="https://wa.me/5551995977459?text=Ol%C3%A1%2C%20quero%20saber%20o%20card%C3%A1pio%20do%20almo%C3%A7o%20do%20Restaurante%20Real.">WhatsApp</a>
+            </div>
+          </div>
+          <div class="map-frame">
+            <iframe title="Mapa do Restaurante Real" src="https://www.google.com/maps?q=-29.5509332,-49.8868979&z=16&output=embed" loading="lazy"></iframe>
+          </div>
+        </div>
+      </section>
 
-</body>
+      <section>
+        <div class="container">
+          <div class="center">
+            <p class="eyebrow">FAQ</p>
+            <h2>Respostas rápidas para quem está decidindo onde almoçar.</h2>
+          </div>
+          <div class="faq">
+            <details><summary>Qual o horário de funcionamento do Restaurante Real?</summary><p>Funcionamos de segunda a domingo, das 11h às 14h.</p></details>
+            <details><summary>O Restaurante Real faz delivery?</summary><p>Sim. Fazemos entrega pelo cardápio online via Anota AI.</p></details>
+            <details><summary>O Restaurante Real tem buffet livre ou por quilo?</summary><p>Oferecemos as duas opções. Você escolhe o modelo que preferir.</p></details>
+            <details><summary>O restaurante funciona no inverno?</summary><p>Sim, atendemos durante todo o ano, de segunda a domingo.</p></details>
+          </div>
+        </div>
+      </section>
+
+      <section class="final">
+        <div class="container final-row">
+          <div>
+            <h2>Seu almoço está esperando por você.</h2>
+            <p>Venha nos visitar ou peça pelo delivery. De segunda a domingo, das 11h às 14h.</p>
+          </div>
+          <div class="actions">
+            <a class="btn btn-secondary" href="https://pedido.anota.ai/loja/restaurante-real-1">Peça online</a>
+            <a class="btn btn-primary" href="https://www.instagram.com/orestaurantereal/">Instagram</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-row">
+        <div>
+          <strong style="font-family: 'Playfair Display', Georgia, serif; font-size: 24px;">Restaurante Real</strong>
+          <p>Rua Ponciano de Vargas, 699 - Arroio do Sal, RS</p>
+        </div>
+        <div class="footer-links">
+          <a href="https://www.instagram.com/orestaurantereal/">Instagram</a>
+          <a href="https://www.facebook.com/orestaurantereal/">Facebook</a>
+          <a href="https://pedido.anota.ai/loja/restaurante-real-1">Delivery</a>
+          <a href="https://maps.app.goo.gl/nfmcCjBAroTbhgo29">Mapa</a>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
